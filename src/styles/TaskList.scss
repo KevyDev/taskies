@@ -1,0 +1,59 @@
+@import "vars";
+
+.task-list {
+    width: 100%;
+    max-width: $maxWidth;
+    margin-inline: auto;
+    padding: 0 2rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    h6 {
+        width: 100%;
+        text-align: center;
+        color: $gray;
+    }
+    li {
+        padding: 1rem;
+        border-radius: $borderRadius;
+        border-bottom: 0.2rem solid $blue;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 1rem;
+        align-items: center;
+        transition: 0.3s ease all;
+        &:hover {
+            background: $lightLightGray;
+        }
+        p {
+            color: $black;
+        }
+        button {
+            width: 2rem;
+            height: 2rem;
+            background: transparent;
+            border: 0.2rem solid $gray;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            &:hover {
+                border-color: $lightGray;
+            }
+            svg {
+                height: 1.4rem;
+                fill: $lightGray;
+            }
+        }
+        &.completed {
+            p {
+                text-decoration: line-through;
+                color: $gray;
+            }
+            button {
+                border-color: $lightGray;
+            }
+        }
+    }
+}

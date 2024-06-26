@@ -1,0 +1,200 @@
+@import "vars";
+
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+button,
+img,
+ol,
+ul,
+li,
+form,
+input,
+textarea,
+label,
+footer,
+header,
+nav {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: inherit;
+    font-family: Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+article,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+    display: block;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    line-height: 1;
+}
+
+body {
+    &::-webkit-scrollbar {
+        width: 0.5rem;
+        background: $white;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $gray;
+        border-radius: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: $lightGray;
+    }
+
+    &::-webkit-scrollbar-thumb:active {
+        background-color: $gray;
+    }
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+a {
+    color: $blue;
+    text-decoration: none;
+}
+
+p,
+label,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $black;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2.25rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.75rem;
+}
+
+h5 {
+    font-size: 1.5rem;
+}
+
+h6,
+p,
+li,
+a {
+    font-size: 1.25rem;
+}
+
+svg {
+    display: block;
+}
+
+input,
+textarea,
+a,
+button {
+    transition: 0.3s all ease;
+    svg {
+        transition: 0.3s fill ease;
+    }
+}
+
+button,
+.button {
+    width: 100%;
+    height: 3.5rem;
+    border-radius: $borderRadius;
+    font-size: 1.2rem;
+    color: $white;
+    background: transparent;
+    border: 0.2rem solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    svg {
+        height: 1.4rem;
+        transition: 0.3s ease all;
+        fill: $white;
+    }
+    &.blue {
+        border-color: $blue;
+        background: $blue;
+        &:hover {
+            border-color: $lightBlue;
+            background: $lightBlue;
+        }
+    }
+    &.red {
+        color: $white;
+        border-color: $red;
+        background: $red;
+        svg {
+            fill: $red;
+        }
+        &:hover {
+            background: transparent;
+            color: $red;
+            svg {
+                fill: $lightRed;
+            }
+        }
+        &.without-borders {
+            border-color: transparent;
+            color: $red;
+            background: transparent;
+        }
+    }
+    &.gray {
+        background: $gray;
+        &:hover {
+            background: $lightGray;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    html {
+        font-size: 12px;
+    }
+}

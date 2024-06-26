@@ -1,0 +1,26 @@
+@import "vars";
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: $white;
+    nav {
+        width: 100%;
+        max-width: $maxWidth;
+        margin-inline: auto;
+        padding: 2rem;
+        gap: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 3.5rem;
+        align-items: center;
+        &.empty-list {
+            grid-template-columns: 1fr;
+        }
+        &.removing {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
