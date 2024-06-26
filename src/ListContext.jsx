@@ -1,5 +1,5 @@
-import { createContext, useState } from "react";
-import { apiAddTask, apiCompleteTask, apiGetTasks, apiRemoveTasks } from "./api";
+import { createContext, useState } from 'react';
+import { apiAddTask, apiCompleteTask, apiGetTasks, apiRemoveTasks } from './api';
 
 const ListContext = createContext()
 
@@ -13,13 +13,13 @@ export const ListProvider = ({ children }) => {
         let remoteData = apiGetTasks()
 
         // Local sync
-        let localData = JSON.parse(localStorage.getItem("list") || "[]")
+        let localData = JSON.parse(localStorage.getItem('list') || '[]')
         setList(localData)
     }
 
     const saveChanges = newList => {
         setList(newList)
-        localStorage.setItem("list", JSON.stringify(newList))
+        localStorage.setItem('list', JSON.stringify(newList))
     }
 
     const addTask = async (name, color) => {

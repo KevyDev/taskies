@@ -1,13 +1,13 @@
-import { useContext } from "react"
-import ListContext from "./ListContext"
-import Task from "./Task"
-import "./styles/TaskList.scss"
+import { useContext } from 'react'
+import ListContext from './ListContext'
+import Task from './Task'
+import './styles/TaskList.scss'
 
 function TaskList() {
     const { list, emptyList } = useContext(ListContext)
 
     return (
-        <ul className="task-list">
+        <ul className='task-list'>
             {
                 emptyList ?
                     <h6>No hay tareas :/</h6> :

@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 import CreateTask from './CreateTask'
 import Home from './Home'
 import ListContext from './ListContext'
@@ -9,17 +9,17 @@ function App() {
 
 	useEffect(() => {
 		loadList()
-		window.addEventListener("storage", loadList)
-		return () => window.addEventListener("storage", loadList)
+		window.addEventListener('storage', loadList)
+		return () => window.addEventListener('storage', loadList)
 	}, [])
 
 	return (
-		<BrowserRouter>
+		<HashRouter>
 			<Routes>
 				<Route index element={<Home />} />
 				<Route path='/add' element={<CreateTask />} />
 			</Routes>
-		</BrowserRouter>
+		</HashRouter>
 	)
 }
 
